@@ -54,10 +54,10 @@ export const LENGTH_OPTIONS: string[] = [
 ];
 
 // Content Calendar Constants
-export const PLATFORM_INFO: Record<Platform, { icon: string; color: string }> = {
-    LinkedIn: { icon: '💼', color: 'bg-blue-500' },
-    X: { icon: '🐦', color: 'bg-gray-400' },
-    Blog: { icon: '📝', color: 'bg-orange-500' },
+export const PLATFORM_INFO: Record<Platform, { icon: string; color: string; textColor: string }> = {
+    LinkedIn: { icon: '💼', color: 'bg-blue-100 dark:bg-blue-900/50', textColor: 'text-blue-800 dark:text-blue-200' },
+    X: { icon: '🐦', color: 'bg-gray-200 dark:bg-gray-700/50', textColor: 'text-gray-800 dark:text-gray-200' },
+    Blog: { icon: '📝', color: 'bg-orange-100 dark:bg-orange-900/50', textColor: 'text-orange-800 dark:text-orange-200' },
 };
 
 export const STATUS_INFO: Record<Status, { color: string }> = {

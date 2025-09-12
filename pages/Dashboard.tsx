@@ -1,3 +1,4 @@
+
 import React, { useState, useMemo } from 'react';
 import Header from '../components/Header';
 import Button from '../components/Button';
@@ -92,7 +93,7 @@ const Dashboard: React.FC<DashboardProps> = ({ onNavClick }) => {
                 <CalendarHeader currentDate={currentDate} onPrevMonth={handlePrevMonth} onNextMonth={handleNextMonth} onToday={handleToday} />
                 <div className="grid grid-cols-7 gap-px bg-gray-300 dark:bg-secondary-accent border border-gray-300 dark:border-secondary-accent rounded-lg overflow-hidden">
                     {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(day => (
-                        <div key={day} className="text-center text-xs font-semibold text-gray-500 dark:text-secondary-text py-3 bg-white dark:bg-background">
+                        <div key={day} className="text-center text-xs font-semibold text-gray-700 dark:text-secondary-text py-3 bg-white dark:bg-background">
                             {day}
                         </div>
                     ))}
@@ -112,10 +113,10 @@ const Dashboard: React.FC<DashboardProps> = ({ onNavClick }) => {
                                         </time>
                                         <div className="flex-grow mt-1 space-y-1 overflow-y-auto">
                                             {eventsForDay.map(event => (
-                                                <div key={event.id} className="text-xs p-1.5 rounded-md text-white/90" style={{backgroundColor: PLATFORM_INFO[event.platform].color}}>
+                                                <div key={event.id} className={`text-xs p-1.5 rounded-md ${PLATFORM_INFO[event.platform].color}`}>
                                                     <div className="flex items-center gap-1.5">
                                                         <span className={`h-2 w-2 rounded-full ${STATUS_INFO[event.status].color} flex-shrink-0`}></span>
-                                                        <span className="truncate">{event.title}</span>
+                                                        <span className={`truncate font-medium ${PLATFORM_INFO[event.platform].textColor}`}>{event.title}</span>
                                                     </div>
                                                 </div>
                                             ))}
