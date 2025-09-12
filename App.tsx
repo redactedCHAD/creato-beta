@@ -3,6 +3,7 @@ import Sidebar from './components/Sidebar';
 import AdGeneratorTool from './pages/AdGeneratorTool';
 import SocialPostWriterTool from './pages/SocialPostWriterTool';
 import Dashboard from './pages/Dashboard';
+import GbpOptimizerTool from './pages/GbpOptimizerTool';
 import ThemeToggle from './components/ThemeToggle';
 import type { Tool } from './types';
 
@@ -23,6 +24,8 @@ const App: React.FC = () => {
         return <AdGeneratorTool onBackToDashboard={backToDashboard} />;
       case 'social-posts':
         return <SocialPostWriterTool onBackToDashboard={backToDashboard} />;
+      case 'gbp-optimizer':
+        return <GbpOptimizerTool onBackToDashboard={backToDashboard} />;
       default:
         return <Dashboard onNavClick={handleNavClick} />;
     }

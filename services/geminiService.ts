@@ -249,3 +249,85 @@ ${blogContent}
         throw new Error("An unknown error occurred while generating the hero image.");
     }
 };
+
+// GBP Business Description
+export interface GbpBusinessDetails {
+    name: string;
+    address: string;
+    categories: string;
+    services: string[];
+    usp: string;
+    tone: string;
+}
+
+export const generateGbpDescription = async (details: GbpBusinessDetails): Promise<string> => {
+    const { name, address, categories, services, usp, tone } = details;
+    
+    const primaryKeywords = services.slice(0, 3).join(', ');
+
+    const prompt = `You are an expert local SEO copywriter tasked with creating a Google Business Profile description.
+The description must be a maximum of 750 characters.
+Crucially, the most important information, including primary keywords, must be placed within the first 250 characters.
+The copy must be engaging and written in a ${tone} voice.
+You must strictly adhere to Google's guidelines: do not include any URLs, phone numbers, or promotional language such as '50% off' or 'sale'.
+Use the following keywords naturally within the text: ${primaryKeywords}.
+The business's details are as follows:
+- Business Name: ${name}
+- Location: ${address}
+- Categories: ${categories}
+- Services Offered: ${services.join(', ')}
+- Unique Selling Proposition: ${usp}
+
+Generate the business description now.`;
+
+    try {
+        const response = await ai.models.generateContent({
+            model: 'gemini-2.5-flash',
+            contents: prompt,
+        });
+        const text = response.text;
+        if (!text) {
+            throw new Error("The API returned an empty response.");
+        }
+        return text.trim();
+    } catch (error) {
+        console.error("Error calling Gemini API for GBP description:", error);
+        if (error instanceof Error) {
+            throw new Error(`Failed to generate GBP description: ${error.message}`);
+        }
+        throw new Error("An unknown error occurred while communicating with the API.");
+    }
+};
+
+// GBP Service Description
+export interface GbpServiceDetails {
+    serviceName: string;
+    businessName: string;
+    city: string;
+    primaryCategory: string;
+    tone: string;
+}
+
+export const generateGbpServiceDescription = async (details: GbpServiceDetails): Promise<string> => {
+    const { serviceName, businessName, city, primaryCategory, tone } = details;
+    
+    const prompt = `As a local SEO expert, write a compelling and keyword-rich service description for "${serviceName}" offered by "${businessName}," a leading ${primaryCategory} in ${city}. The description should clearly explain the benefits of this service to the customer and be written in a ${tone} voice. Naturally incorporate related concepts to provide more detail and value. Keep the description concise, informative, and focused on the service.`;
+
+    try {
+        const response = await ai.models.generateContent({
+            model: 'gemini-2.5-flash',
+            contents: prompt,
+        });
+        const text = response.text;
+        if (!text) {
+            throw new Error("The API returned an empty response.");
+        }
+        return text.trim();
+    } catch (error) {
+        console.error("Error calling Gemini API for GBP service description:", error);
+        if (error instanceof Error) {
+            throw new Error(`Failed to generate GBP service description: ${error.message}`);
+        }
+        throw new Error("An unknown error occurred while communicating with the API.");
+    }
+};

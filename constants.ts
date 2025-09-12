@@ -47,6 +47,15 @@ export const TONE_OPTIONS: string[] = [
     'Informative'
 ];
 
+export const GBP_TONE_OPTIONS: string[] = [
+    'Professional',
+    'Friendly',
+    'Formal',
+    'Technical',
+    'Playful'
+];
+
+
 export const LENGTH_OPTIONS: string[] = [
     'Short',
     'Medium',
