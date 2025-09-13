@@ -12,10 +12,10 @@ interface GbpOptimizerToolProps {
 const OptionButton: React.FC<{ label: string; isSelected: boolean; onClick: () => void; }> = ({ label, isSelected, onClick }) => (
     <button
         onClick={onClick}
-        className={`px-4 py-2.5 rounded-lg text-sm font-semibold text-center transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-background focus:ring-gray-700 dark:focus:ring-primary-accent
+        className={`px-4 py-2.5 rounded-lg text-sm font-semibold text-center transition-all duration-200 transform focus:outline-none focus:ring-4 focus:ring-accent/50
             ${isSelected
-                ? 'bg-gray-900 text-white shadow-md dark:bg-primary-accent dark:text-background'
-                : 'bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-secondary-accent dark:text-secondary-text dark:hover:bg-[#333]'
+                ? 'bg-accent text-white shadow-md scale-105'
+                : 'bg-gray-200 text-gray-700 hover:bg-gray-300 hover:scale-105 dark:bg-secondary-accent dark:text-secondary-text dark:hover:bg-[#333]'
             }`}
     >
         {label}
@@ -121,29 +121,29 @@ const GbpOptimizerTool: React.FC<GbpOptimizerToolProps> = ({ onBackToDashboard }
 
     return (
         <>
-            <div className="w-full max-w-7xl mx-auto pb-24 sm:pb-0">
+            <div className="w-full max-w-7xl mx-auto pb-24 sm:pb-0 animate-fade-in">
                 <Header
-                    title={<>Google Business Profile <span className="text-gray-900 dark:text-primary-accent">Optimizer</span></>}
+                    title={<>Google Business Profile <span className="text-accent">Optimizer</span></>}
                     subtitle="Generate compelling, SEO-friendly descriptions for your business and services."
                 />
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
                     {/* LEFT: INPUTS */}
                     <div className="flex flex-col space-y-6 p-6 bg-white dark:bg-background border border-gray-200 dark:border-secondary-accent rounded-xl">
-                        <h2 className="text-xl font-bold text-gray-900 dark:text-primary-text"><span className="text-gray-900 dark:text-primary-accent">1.</span> Enter Business Details</h2>
+                        <h2 className="text-xl font-bold text-gray-900 dark:text-primary-text"><span className="text-accent">1.</span> Enter Business Details</h2>
                         <LabeledInput label="Business Name">
-                            <input type="text" value={businessName} onChange={e => setBusinessName(e.target.value)} placeholder="e.g., Sarah's Sunny Cafe" className="w-full p-3 bg-white dark:bg-background border border-gray-300 dark:border-secondary-accent text-gray-900 dark:text-primary-text rounded-lg focus:ring-2 focus:ring-gray-500 dark:focus:ring-primary-accent" />
+                            <input type="text" value={businessName} onChange={e => setBusinessName(e.target.value)} placeholder="e.g., Sarah's Sunny Cafe" className="w-full p-3 bg-white dark:bg-background border border-gray-300 dark:border-secondary-accent text-gray-900 dark:text-primary-text rounded-lg focus:ring-2 focus:ring-accent focus:border-accent" />
                         </LabeledInput>
                         <LabeledInput label="Address / City">
-                            <input type="text" value={address} onChange={e => setAddress(e.target.value)} placeholder="e.g., San Francisco, CA" className="w-full p-3 bg-white dark:bg-background border border-gray-300 dark:border-secondary-accent text-gray-900 dark:text-primary-text rounded-lg focus:ring-2 focus:ring-gray-500 dark:focus:ring-primary-accent" />
+                            <input type="text" value={address} onChange={e => setAddress(e.target.value)} placeholder="e.g., San Francisco, CA" className="w-full p-3 bg-white dark:bg-background border border-gray-300 dark:border-secondary-accent text-gray-900 dark:text-primary-text rounded-lg focus:ring-2 focus:ring-accent focus:border-accent" />
                         </LabeledInput>
                         <LabeledInput label="Primary & Secondary Categories">
-                            <input type="text" value={categories} onChange={e => setCategories(e.target.value)} placeholder="e.g., Coffee Shop, Breakfast Restaurant" className="w-full p-3 bg-white dark:bg-background border border-gray-300 dark:border-secondary-accent text-gray-900 dark:text-primary-text rounded-lg focus:ring-2 focus:ring-gray-500 dark:focus:ring-primary-accent" />
+                            <input type="text" value={categories} onChange={e => setCategories(e.target.value)} placeholder="e.g., Coffee Shop, Breakfast Restaurant" className="w-full p-3 bg-white dark:bg-background border border-gray-300 dark:border-secondary-accent text-gray-900 dark:text-primary-text rounded-lg focus:ring-2 focus:ring-accent focus:border-accent" />
                         </LabeledInput>
                         <LabeledInput label="Services (one per line)">
-                            <textarea value={services} onChange={e => setServices(e.target.value)} placeholder={"e.g.,\nEspresso Drinks\nPastries\nSandwiches"} rows={5} className="w-full p-3 bg-white dark:bg-background border border-gray-300 dark:border-secondary-accent text-gray-900 dark:text-primary-text rounded-lg focus:ring-2 focus:ring-gray-500 dark:focus:ring-primary-accent" />
+                            <textarea value={services} onChange={e => setServices(e.target.value)} placeholder={"e.g.,\nEspresso Drinks\nPastries\nSandwiches"} rows={5} className="w-full p-3 bg-white dark:bg-background border border-gray-300 dark:border-secondary-accent text-gray-900 dark:text-primary-text rounded-lg focus:ring-2 focus:ring-accent focus:border-accent" />
                         </LabeledInput>
                         <LabeledInput label="Unique Selling Proposition (USP)">
-                             <textarea value={usp} onChange={e => setUsp(e.target.value)} placeholder="e.g., We use locally-sourced, organic beans." rows={3} className="w-full p-3 bg-white dark:bg-background border border-gray-300 dark:border-secondary-accent text-gray-900 dark:text-primary-text rounded-lg focus:ring-2 focus:ring-gray-500 dark:focus:ring-primary-accent" />
+                             <textarea value={usp} onChange={e => setUsp(e.target.value)} placeholder="e.g., We use locally-sourced, organic beans." rows={3} className="w-full p-3 bg-white dark:bg-background border border-gray-300 dark:border-secondary-accent text-gray-900 dark:text-primary-text rounded-lg focus:ring-2 focus:ring-accent focus:border-accent" />
                         </LabeledInput>
                         <LabeledInput label="Tone of Voice">
                              <div className="grid grid-cols-3 sm:grid-cols-5 gap-2">
@@ -156,16 +156,16 @@ const GbpOptimizerTool: React.FC<GbpOptimizerToolProps> = ({ onBackToDashboard }
                     <div className="flex flex-col space-y-8">
                         {/* Business Description */}
                         <div className="flex flex-col space-y-4 p-6 bg-white dark:bg-background border border-gray-200 dark:border-secondary-accent rounded-xl">
-                             <h2 className="text-xl font-bold text-gray-900 dark:text-primary-text"><span className="text-gray-900 dark:text-primary-accent">2.</span> Generate Business Description</h2>
+                             <h2 className="text-xl font-bold text-gray-900 dark:text-primary-text"><span className="text-accent">2.</span> Generate Business Description</h2>
                              <Button onClick={handleGenerateDescription} disabled={!isDescriptionFormValid || isGeneratingDescription}>
                                 {isGeneratingDescription ? 'Generating...' : 'Generate Description'}
                              </Button>
                             <div className="flex gap-4">
                                 <div className="flex-grow">
-                                    <textarea value={gbpDescription} onChange={e => setGbpDescription(e.target.value)} rows={10} className="w-full p-3 bg-gray-100 dark:bg-secondary-accent/50 border border-gray-300 dark:border-secondary-accent text-gray-900 dark:text-primary-text rounded-lg focus:ring-2 focus:ring-gray-500 dark:focus:ring-primary-accent" placeholder="Your generated business description will appear here." />
+                                    <textarea value={gbpDescription} onChange={e => setGbpDescription(e.target.value)} rows={10} className="w-full p-3 bg-gray-100 dark:bg-secondary-accent/50 border border-gray-300 dark:border-secondary-accent text-gray-900 dark:text-primary-text rounded-lg focus:ring-2 focus:ring-accent focus:border-accent" placeholder="Your generated business description will appear here." />
                                     <div className="mt-2">
                                         <div className="relative w-full bg-gray-200 dark:bg-secondary-accent rounded-full h-2">
-                                            <div className="bg-blue-600 dark:bg-blue-400 h-2 rounded-full" style={{ width: `${Math.min(charCount / 750 * 100, 100)}%` }}></div>
+                                            <div className="bg-accent h-2 rounded-full" style={{ width: `${Math.min(charCount / 750 * 100, 100)}%` }}></div>
                                             {/* 250 character marker */}
                                             <div className="absolute top-0 h-2 w-0.5 bg-red-500" style={{ left: `${250 / 750 * 100}%` }} title="250 character mark"></div>
                                         </div>
@@ -188,7 +188,7 @@ const GbpOptimizerTool: React.FC<GbpOptimizerToolProps> = ({ onBackToDashboard }
 
                         {/* Service Descriptions */}
                         <div className="flex flex-col space-y-4 p-6 bg-white dark:bg-background border border-gray-200 dark:border-secondary-accent rounded-xl">
-                            <h2 className="text-xl font-bold text-gray-900 dark:text-primary-text"><span className="text-gray-900 dark:text-primary-accent">3.</span> Generate Service Descriptions</h2>
+                            <h2 className="text-xl font-bold text-gray-900 dark:text-primary-text"><span className="text-accent">3.</span> Generate Service Descriptions</h2>
                             <Button onClick={handleGenerateServices} disabled={!isDescriptionFormValid || isGeneratingServices || services.trim() === ''}>
                                 {isGeneratingServices ? 'Generating...' : 'Generate All Service Descriptions'}
                             </Button>

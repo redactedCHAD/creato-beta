@@ -154,9 +154,9 @@ const AdGeneratorTool: React.FC<AdGeneratorToolProps> = ({ onBackToDashboard }) 
 
   return (
     <>
-      <div className="w-full max-w-7xl mx-auto pb-24 sm:pb-0">
+      <div className="w-full max-w-7xl mx-auto pb-24 sm:pb-0 animate-fade-in">
         <Header 
-          title={<>AI Ad <span className="text-gray-900 dark:text-primary-accent">Creative</span> Generator</>}
+          title={<>AI Ad <span className="text-accent">Creative</span> Generator</>}
           subtitle="Transform your product photos into stunning image and video ads with Gemini."
         />
         <div className="flex flex-col gap-8">
@@ -165,7 +165,7 @@ const AdGeneratorTool: React.FC<AdGeneratorToolProps> = ({ onBackToDashboard }) 
             {/* Inputs Card */}
             <div className="flex flex-col space-y-6 p-6 bg-white dark:bg-background border border-gray-200 dark:border-secondary-accent rounded-xl">
               <div>
-                <h2 className="text-xl font-bold text-gray-900 dark:text-primary-text mb-3"><span className="text-gray-900 dark:text-primary-accent">1.</span> Upload Photos</h2>
+                <h2 className="text-xl font-bold text-gray-900 dark:text-primary-text mb-3"><span className="text-accent">1.</span> Upload Photos</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <ImageUploader
                     value={primaryImage}
@@ -182,12 +182,12 @@ const AdGeneratorTool: React.FC<AdGeneratorToolProps> = ({ onBackToDashboard }) 
                 </div>
               </div>
               <div>
-                <h2 className="text-xl font-bold text-gray-900 dark:text-primary-text mb-3"><span className="text-gray-900 dark:text-primary-accent">2.</span> Describe Your Ad*</h2>
+                <h2 className="text-xl font-bold text-gray-900 dark:text-primary-text mb-3"><span className="text-accent">2.</span> Describe Your Ad*</h2>
                 <textarea
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
                   placeholder="e.g., A refreshing drink for a hot summer day, highlighting its natural ingredients."
-                  className="w-full h-24 p-3 bg-white dark:bg-background border border-gray-300 dark:border-secondary-accent text-gray-900 dark:text-primary-text rounded-lg focus:ring-2 focus:ring-gray-500 dark:focus:ring-primary-accent focus:border-gray-500 dark:focus:border-primary-accent transition-colors"
+                  className="w-full h-24 p-3 bg-white dark:bg-background border border-gray-300 dark:border-secondary-accent text-gray-900 dark:text-primary-text rounded-lg focus:ring-2 focus:ring-accent focus:border-accent transition-colors"
                   maxLength={200}
                   aria-required="true"
                 />
@@ -197,7 +197,7 @@ const AdGeneratorTool: React.FC<AdGeneratorToolProps> = ({ onBackToDashboard }) 
             {/* Image Generation Card */}
             <div className="flex flex-col space-y-4 p-6 bg-white dark:bg-background border border-gray-200 dark:border-secondary-accent rounded-xl">
               <div>
-                <h2 className="text-xl font-bold text-gray-900 dark:text-primary-text mb-3"><span className="text-gray-900 dark:text-primary-accent">3.</span> Generate Ad Image</h2>
+                <h2 className="text-xl font-bold text-gray-900 dark:text-primary-text mb-3"><span className="text-accent">3.</span> Generate Ad Image</h2>
                 <p className="text-sm text-gray-600 dark:text-secondary-text mb-4">Choose up to 3 styles to apply to your ad image.</p>
                 <StyleSelector
                   styles={IMAGE_STYLE_OPTIONS}

@@ -10,8 +10,19 @@ interface ToolCardProps {
 }
 
 const ToolCard: React.FC<ToolCardProps> = ({ icon, title, description, buttonText, onButtonClick }) => {
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        e.currentTarget.style.setProperty('--mouse-x', `${x}px`);
+        e.currentTarget.style.setProperty('--mouse-y', `${y}px`);
+    };
+
     return (
-        <div className="flex flex-col justify-between p-6 bg-white dark:bg-background border border-gray-200 dark:border-secondary-accent rounded-xl transition-all duration-300 hover:border-gray-400/50 dark:hover:border-primary-accent/50">
+        <div 
+            onMouseMove={handleMouseMove}
+            className="glow-card relative overflow-hidden flex flex-col justify-between p-6 bg-white dark:bg-background border border-gray-200 dark:border-secondary-accent rounded-xl transition-all duration-300 hover:border-accent/80 hover:scale-[1.02] transform"
+        >
             <div>
                 <div className="flex items-center gap-4 mb-3">
                     <div className="bg-gray-100 dark:bg-secondary-accent p-2 rounded-lg">

@@ -1,4 +1,5 @@
 
+
 import React, { useState, useMemo } from 'react';
 import Header from '../components/Header';
 import Button from '../components/Button';
@@ -14,7 +15,7 @@ const CalendarHeader: React.FC<{
     onToday: () => void;
 }> = ({ currentDate, onPrevMonth, onNextMonth, onToday }) => (
     <div className="flex items-center justify-between mb-6">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-primary-text">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-primary-text font-serif">
             {currentDate.toLocaleString('default', { month: 'long' })} {currentDate.getFullYear()}
         </h2>
         <div className="flex items-center gap-2">
@@ -66,13 +67,13 @@ const Dashboard: React.FC<DashboardProps> = ({ onNavClick }) => {
     const today = new Date();
 
     return (
-        <div className="w-full max-w-7xl mx-auto space-y-8">
+        <div className="w-full max-w-7xl mx-auto space-y-8 animate-fade-in">
             <Header
                 title={<>Dashboard</>}
                 subtitle="Your marketing command center. Create content and visualize your strategy."
             />
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <ToolCard 
                     icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-800 dark:text-primary-text" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" /></svg>}
                     title="Ad Creative Generator"
@@ -86,6 +87,13 @@ const Dashboard: React.FC<DashboardProps> = ({ onNavClick }) => {
                     description="Generate engaging social media posts, from short tweets to full blog articles, in any tone."
                     buttonText="Write Post ✍️"
                     onButtonClick={() => onNavClick('social-posts')}
+                />
+                 <ToolCard
+                    icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-800 dark:text-primary-text" viewBox="0 0 20 20" fill="currentColor"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" /></svg>}
+                    title="GBP Optimizer"
+                    description="Generate compelling, SEO-friendly descriptions for your business and services to improve local search visibility."
+                    buttonText="Optimize GBP 📈"
+                    onButtonClick={() => onNavClick('gbp-optimizer')}
                 />
             </div>
 
@@ -108,7 +116,7 @@ const Dashboard: React.FC<DashboardProps> = ({ onNavClick }) => {
                             >
                                 {date && (
                                     <>
-                                        <time dateTime={date.toISOString()} className={`text-sm font-semibold ${isToday ? 'bg-gray-900 text-white dark:bg-primary-accent dark:text-background rounded-full flex items-center justify-center h-7 w-7' : 'text-gray-900 dark:text-primary-text'}`}>
+                                        <time dateTime={date.toISOString()} className={`text-sm font-semibold transition-all duration-200 ${isToday ? 'bg-accent text-white dark:text-background rounded-full flex items-center justify-center h-7 w-7' : 'text-gray-900 dark:text-primary-text group-hover:scale-110'}`}>
                                             {date.getDate()}
                                         </time>
                                         <div className="flex-grow mt-1 space-y-1 overflow-y-auto">
@@ -135,17 +143,17 @@ const Dashboard: React.FC<DashboardProps> = ({ onNavClick }) => {
                 <form className="space-y-4">
                     <div>
                         <label htmlFor="title" className="block text-sm font-medium text-gray-600 dark:text-secondary-text mb-1">Title</label>
-                        <input type="text" id="title" placeholder="e.g., Weekly product update" className="w-full p-3 bg-white dark:bg-background border border-gray-300 dark:border-secondary-accent text-gray-900 dark:text-primary-text rounded-lg focus:ring-2 focus:ring-gray-500 dark:focus:ring-primary-accent" />
+                        <input type="text" id="title" placeholder="e.g., Weekly product update" className="w-full p-3 bg-white dark:bg-background border border-gray-300 dark:border-secondary-accent text-gray-900 dark:text-primary-text rounded-lg focus:ring-2 focus:ring-accent focus:border-accent" />
                     </div>
                     <div>
                         <label htmlFor="platform" className="block text-sm font-medium text-gray-600 dark:text-secondary-text mb-1">Platform</label>
-                        <select id="platform" className="w-full p-3 bg-white dark:bg-background border border-gray-300 dark:border-secondary-accent text-gray-900 dark:text-primary-text rounded-lg focus:ring-2 focus:ring-gray-500 dark:focus:ring-primary-accent appearance-none">
+                        <select id="platform" className="w-full p-3 bg-white dark:bg-background border border-gray-300 dark:border-secondary-accent text-gray-900 dark:text-primary-text rounded-lg focus:ring-2 focus:ring-accent focus:border-accent appearance-none">
                            {Object.keys(PLATFORM_INFO).map(p => <option key={p}>{p}</option>)}
                         </select>
                     </div>
                      <div>
                         <label htmlFor="status" className="block text-sm font-medium text-gray-600 dark:text-secondary-text mb-1">Status</label>
-                        <select id="status" className="w-full p-3 bg-white dark:bg-background border border-gray-300 dark:border-secondary-accent text-gray-900 dark:text-primary-text rounded-lg focus:ring-2 focus:ring-gray-500 dark:focus:ring-primary-accent appearance-none">
+                        <select id="status" className="w-full p-3 bg-white dark:bg-background border border-gray-300 dark:border-secondary-accent text-gray-900 dark:text-primary-text rounded-lg focus:ring-2 focus:ring-accent focus:border-accent appearance-none">
                            {Object.keys(STATUS_INFO).map(s => <option key={s}>{s}</option>)}
                         </select>
                     </div>

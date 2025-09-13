@@ -16,10 +16,10 @@ const StyleSelector: React.FC<StyleSelectorProps> = ({ styles, selectedStyles, o
           <button
             key={style}
             onClick={() => onStyleToggle(style)}
-            className={`px-4 py-3 rounded-lg text-sm font-semibold text-center transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-background focus:ring-gray-700 dark:focus:ring-primary-accent
+            className={`px-4 py-3 rounded-lg text-sm font-semibold text-center transition-all duration-200 transform focus:outline-none focus:ring-4 focus:ring-accent/50
               ${isSelected
-                ? 'bg-gray-900 text-white shadow-lg dark:bg-primary-accent dark:text-background'
-                : 'bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-secondary-accent dark:text-secondary-text dark:hover:bg-[#333] dark:hover:text-primary-text'
+                ? 'bg-accent text-white shadow-lg scale-105'
+                : 'bg-gray-200 text-gray-700 hover:bg-gray-300 hover:scale-105 dark:bg-secondary-accent dark:text-secondary-text dark:hover:bg-[#333] dark:hover:text-primary-text'
               }`}
           >
             {style}

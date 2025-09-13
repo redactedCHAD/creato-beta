@@ -18,10 +18,10 @@ const OptionButton: React.FC<{
 }> = ({ label, isSelected, onClick }) => (
     <button
         onClick={onClick}
-        className={`px-4 py-2.5 rounded-lg text-sm font-semibold text-center transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-background focus:ring-gray-700 dark:focus:ring-primary-accent
+        className={`px-4 py-2.5 rounded-lg text-sm font-semibold text-center transition-all duration-200 transform focus:outline-none focus:ring-4 focus:ring-accent/50
             ${isSelected
-                ? 'bg-gray-900 text-white shadow-md dark:bg-primary-accent dark:text-background'
-                : 'bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-secondary-accent dark:text-secondary-text dark:hover:bg-[#333]'
+                ? 'bg-accent text-white shadow-md scale-105'
+                : 'bg-gray-200 text-gray-700 hover:bg-gray-300 hover:scale-105 dark:bg-secondary-accent dark:text-secondary-text dark:hover:bg-[#333]'
             }`}
     >
         {label}
@@ -143,9 +143,9 @@ const SocialPostWriterTool: React.FC<SocialPostWriterToolProps> = ({ onBackToDas
 
     return (
         <>
-            <div className="w-full max-w-7xl mx-auto pb-24 sm:pb-0">
+            <div className="w-full max-w-7xl mx-auto pb-24 sm:pb-0 animate-fade-in">
                 <Header 
-                    title={<>Social Post <span className="text-gray-900 dark:text-primary-accent">Writer</span></>}
+                    title={<>Social Post <span className="text-accent">Writer</span></>}
                     subtitle="Generate engaging content for your social media platforms in seconds."
                 />
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -153,17 +153,17 @@ const SocialPostWriterTool: React.FC<SocialPostWriterToolProps> = ({ onBackToDas
                     <div className="flex flex-col space-y-6 p-6 bg-white dark:bg-background border border-gray-200 dark:border-secondary-accent rounded-xl">
                         {/* Input Type */}
                         <div>
-                            <h2 className="text-lg font-bold text-gray-900 dark:text-primary-text mb-3"><span className="text-gray-900 dark:text-primary-accent">1.</span> Provide Context</h2>
+                            <h2 className="text-lg font-bold text-gray-900 dark:text-primary-text mb-3"><span className="text-accent">1.</span> Provide Context</h2>
                             <div className="flex space-x-2 rounded-lg bg-gray-200 dark:bg-secondary-accent p-1">
-                                <button onClick={() => setInputType('topic')} className={`w-full py-2 text-sm font-medium rounded-md transition-colors ${inputType === 'topic' ? 'bg-white text-gray-900 dark:bg-primary-accent dark:text-background' : 'text-gray-600 dark:text-secondary-text hover:bg-gray-300 dark:hover:bg-[#333]'}`}>Subject / Topic</button>
-                                <button onClick={() => setInputType('url')} className={`w-full py-2 text-sm font-medium rounded-md transition-colors ${inputType === 'url' ? 'bg-white text-gray-900 dark:bg-primary-accent dark:text-background' : 'text-gray-600 dark:text-secondary-text hover:bg-gray-300 dark:hover:bg-[#333]'}`}>URL (Website/Video)</button>
+                                <button onClick={() => setInputType('topic')} className={`w-full py-2 text-sm font-medium rounded-md transition-colors ${inputType === 'topic' ? 'bg-white text-gray-900 dark:bg-accent/80 dark:text-white' : 'text-gray-600 dark:text-secondary-text hover:bg-gray-300 dark:hover:bg-[#333]'}`}>Subject / Topic</button>
+                                <button onClick={() => setInputType('url')} className={`w-full py-2 text-sm font-medium rounded-md transition-colors ${inputType === 'url' ? 'bg-white text-gray-900 dark:bg-accent/80 dark:text-white' : 'text-gray-600 dark:text-secondary-text hover:bg-gray-300 dark:hover:bg-[#333]'}`}>URL (Website/Video)</button>
                             </div>
                             {inputType === 'topic' ? (
                                 <textarea
                                     value={inputValue}
                                     onChange={(e) => setInputValue(e.target.value)}
                                     placeholder="e.g., The benefits of using our new productivity app for small teams."
-                                    className="mt-3 w-full h-28 p-3 bg-white dark:bg-background border border-gray-300 dark:border-secondary-accent text-gray-900 dark:text-primary-text rounded-lg focus:ring-2 focus:ring-gray-500 dark:focus:ring-primary-accent focus:border-gray-500 dark:focus:border-primary-accent transition-colors"
+                                    className="mt-3 w-full h-28 p-3 bg-white dark:bg-background border border-gray-300 dark:border-secondary-accent text-gray-900 dark:text-primary-text rounded-lg focus:ring-2 focus:ring-accent focus:border-accent transition-colors"
                                 />
                             ) : (
                                 <input
@@ -171,13 +171,13 @@ const SocialPostWriterTool: React.FC<SocialPostWriterToolProps> = ({ onBackToDas
                                     value={inputValue}
                                     onChange={(e) => setInputValue(e.target.value)}
                                     placeholder="e.g., https://my-awesome-product.com/features"
-                                    className="mt-3 w-full p-3 bg-white dark:bg-background border border-gray-300 dark:border-secondary-accent text-gray-900 dark:text-primary-text rounded-lg focus:ring-2 focus:ring-gray-500 dark:focus:ring-primary-accent focus:border-gray-500 dark:focus:border-primary-accent transition-colors"
+                                    className="mt-3 w-full p-3 bg-white dark:bg-background border border-gray-300 dark:border-secondary-accent text-gray-900 dark:text-primary-text rounded-lg focus:ring-2 focus:ring-accent focus:border-accent transition-colors"
                                 />
                             )}
                         </div>
                         {/* Platform */}
                         <div>
-                            <h2 className="text-lg font-bold text-gray-900 dark:text-primary-text mb-3"><span className="text-gray-900 dark:text-primary-accent">2.</span> Choose Platform</h2>
+                            <h2 className="text-lg font-bold text-gray-900 dark:text-primary-text mb-3"><span className="text-accent">2.</span> Choose Platform</h2>
                             <div className="grid grid-cols-3 gap-3">
                                 {Object.values(POST_TYPES).map(type => (
                                     <OptionButton key={type} label={type} isSelected={postType === type} onClick={() => setPostType(type)} />
@@ -186,7 +186,7 @@ const SocialPostWriterTool: React.FC<SocialPostWriterToolProps> = ({ onBackToDas
                         </div>
                          {/* Attributes */}
                         <div>
-                            <h2 className="text-lg font-bold text-gray-900 dark:text-primary-text mb-3"><span className="text-gray-900 dark:text-primary-accent">3.</span> Set Attributes</h2>
+                            <h2 className="text-lg font-bold text-gray-900 dark:text-primary-text mb-3"><span className="text-accent">3.</span> Set Attributes</h2>
                             <div className="space-y-4">
                                 <div>
                                     <h3 className="font-medium text-gray-600 dark:text-secondary-text mb-2 text-sm">Tone of Voice</h3>

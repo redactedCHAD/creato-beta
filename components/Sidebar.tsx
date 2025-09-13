@@ -11,8 +11,8 @@ interface NavLinkProps {
 }
 
 const NavLink: React.FC<NavLinkProps> = ({ icon, label, isActive = false, isComingSoon = false, onClick }) => {
-  const baseClasses = "flex items-center px-4 py-2.5 text-sm font-medium rounded-lg transition-colors";
-  const activeClasses = "text-gray-900 bg-gray-200 dark:text-primary-text dark:bg-secondary-accent";
+  const baseClasses = "flex items-center px-4 py-2.5 text-sm font-medium rounded-lg transition-colors duration-200";
+  const activeClasses = "text-accent bg-accent/10 font-semibold";
   const inactiveClasses = "text-gray-600 hover:text-gray-900 hover:bg-gray-100 dark:text-secondary-text dark:hover:text-primary-text dark:hover:bg-secondary-accent/50";
   const disabledClasses = "text-gray-400 cursor-not-allowed dark:text-secondary-text/60";
 
@@ -52,17 +52,17 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTool, onNavClick }) => {
   return (
     <aside className="w-64 bg-white dark:bg-background border-r border-gray-200 dark:border-secondary-accent flex-shrink-0 flex-col hidden sm:flex">
       <div className="px-6 py-5 border-b border-gray-200 dark:border-secondary-accent">
-        <h2 className="text-xl font-bold text-gray-900 dark:text-primary-text tracking-wide">Marketing Suite</h2>
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-primary-text tracking-wide font-serif">Marketing Suite</h2>
       </div>
       <nav className="flex-1 px-4 py-4 space-y-2">
         <NavLink
-          icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" /></svg>}
+          icon={<svg xmlns="http://www.w.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" /></svg>}
           label="Dashboard"
           isActive={activeTool === 'dashboard'}
           onClick={() => onNavClick('dashboard')}
         />
         <NavLink
-          icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" /></svg>}
+          icon={<svg xmlns="http://www.w.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" /></svg>}
           label="Ad Generation"
           isActive={activeTool === 'ad-generator'}
           onClick={() => onNavClick('ad-generator')}
