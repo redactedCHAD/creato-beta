@@ -187,7 +187,7 @@ const AdGeneratorTool: React.FC<AdGeneratorToolProps> = ({ onBackToDashboard }) 
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
                   placeholder="e.g., A refreshing drink for a hot summer day, highlighting its natural ingredients."
-                  className="w-full h-24 p-3 bg-white dark:bg-background border border-gray-300 dark:border-secondary-accent text-gray-900 dark:text-primary-text rounded-lg focus:ring-2 focus:ring-accent focus:border-accent transition-colors"
+                  className="w-full h-24 p-3 bg-white dark:bg-background border border-gray-300 dark:border-secondary-accent text-gray-900 dark:text-primary-text rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent dark:focus:border-transparent transition-colors"
                   maxLength={200}
                   aria-required="true"
                 />

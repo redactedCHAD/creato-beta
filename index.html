@@ -24,6 +24,8 @@
               'warning': '#CA8A04',
               'error': '#DC2626',
               'accent': '#8B5CF6',
+              'accent-blue': '#3b82f6',
+              'accent-green': '#10b981',
             },
             fontFamily: {
               sans: ['Inter', 'sans-serif'],
@@ -59,7 +61,7 @@
         height: 100%;
         background: radial-gradient(
             circle at var(--mouse-x) var(--mouse-y),
-            rgba(139, 92, 246, 0.15),
+            var(--glow-color, rgba(139, 92, 246, 0.15)),
             transparent 40%
         );
         border-radius: inherit;
