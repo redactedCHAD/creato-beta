@@ -52,30 +52,19 @@
       }
     </script>
   <style>
-    .glow-card::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(
-            circle at var(--mouse-x) var(--mouse-y),
-            var(--glow-color, rgba(139, 92, 246, 0.15)),
-            transparent 40%
-        );
-        border-radius: inherit;
-        opacity: 0;
-        transition: opacity 0.4s ease-out;
-        z-index: 0;
+    @keyframes borderGlow {
+      0% {
+        box-shadow: 0 0 4px var(--glow-color-start);
+      }
+      50% {
+        box-shadow: 0 0 16px 2px var(--glow-color-end);
+      }
+      100% {
+        box-shadow: 0 0 4px var(--glow-color-start);
+      }
     }
-    .glow-card:hover::before {
-        opacity: 1;
-    }
-    /* Ensure card content is above the glow */
-    .glow-card > * {
-        position: relative;
-        z-index: 1;
+    .tool-card:hover {
+        animation: borderGlow 2.5s infinite ease-in-out;
     }
   </style>
   <script type="importmap">

@@ -106,7 +106,7 @@ const VideoGenerator: React.FC<VideoGeneratorProps> = (props) => {
     const sourcePreviewUrl = sourceImage ? `data:${sourceImage.mimeType};base64,${sourceImage.base64}` : null;
 
     return (
-        <div className="flex flex-col space-y-4 p-6 bg-white dark:bg-background border border-gray-200 dark:border-secondary-accent rounded-xl">
+        <div className="flex flex-col space-y-4 p-6 bg-purple-100/60 dark:bg-accent/20 border border-gray-200 dark:border-secondary-accent rounded-xl">
             <h2 className="text-xl font-bold text-gray-900 dark:text-primary-text"><span className="text-gray-900 dark:text-primary-accent">4.</span> Generate a Video Ad</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Left: Controls */}

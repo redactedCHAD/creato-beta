@@ -128,7 +128,7 @@ const GbpOptimizerTool: React.FC<GbpOptimizerToolProps> = ({ onBackToDashboard }
                 />
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
                     {/* LEFT: INPUTS */}
-                    <div className="flex flex-col space-y-6 p-6 bg-white dark:bg-background border border-gray-200 dark:border-secondary-accent rounded-xl">
+                    <div className="flex flex-col space-y-6 p-6 bg-emerald-100/60 dark:bg-accent-green/20 border border-gray-200 dark:border-secondary-accent rounded-xl">
                         <h2 className="text-xl font-bold text-gray-900 dark:text-primary-text"><span className="text-accent-green">1.</span> Enter Business Details</h2>
                         <LabeledInput label="Business Name">
                             <input type="text" value={businessName} onChange={e => setBusinessName(e.target.value)} placeholder="e.g., Sarah's Sunny Cafe" className="w-full p-3 bg-white dark:bg-background border border-gray-300 dark:border-secondary-accent text-gray-900 dark:text-primary-text rounded-lg focus:ring-2 focus:ring-accent-green focus:border-transparent dark:focus:border-transparent" />
@@ -155,7 +155,7 @@ const GbpOptimizerTool: React.FC<GbpOptimizerToolProps> = ({ onBackToDashboard }
                     {/* RIGHT: OUTPUTS */}
                     <div className="flex flex-col space-y-8">
                         {/* Business Description */}
-                        <div className="flex flex-col space-y-4 p-6 bg-white dark:bg-background border border-gray-200 dark:border-secondary-accent rounded-xl">
+                        <div className="flex flex-col space-y-4 p-6 bg-emerald-100/60 dark:bg-accent-green/20 border border-gray-200 dark:border-secondary-accent rounded-xl">
                              <h2 className="text-xl font-bold text-gray-900 dark:text-primary-text"><span className="text-accent-green">2.</span> Generate Business Description</h2>
                              <Button onClick={handleGenerateDescription} disabled={!isDescriptionFormValid || isGeneratingDescription}>
                                 {isGeneratingDescription ? 'Generating...' : 'Generate Description'}
@@ -187,7 +187,7 @@ const GbpOptimizerTool: React.FC<GbpOptimizerToolProps> = ({ onBackToDashboard }
                         </div>
 
                         {/* Service Descriptions */}
-                        <div className="flex flex-col space-y-4 p-6 bg-white dark:bg-background border border-gray-200 dark:border-secondary-accent rounded-xl">
+                        <div className="flex flex-col space-y-4 p-6 bg-emerald-100/60 dark:bg-accent-green/20 border border-gray-200 dark:border-secondary-accent rounded-xl">
                             <h2 className="text-xl font-bold text-gray-900 dark:text-primary-text"><span className="text-accent-green">3.</span> Generate Service Descriptions</h2>
                             <Button onClick={handleGenerateServices} disabled={!isDescriptionFormValid || isGeneratingServices || services.trim() === ''}>
                                 {isGeneratingServices ? 'Generating...' : 'Generate All Service Descriptions'}

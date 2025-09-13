@@ -12,42 +12,39 @@ interface ToolCardProps {
 
 const colorStyles = {
     purple: {
-        iconContainer: 'bg-gray-100 dark:bg-secondary-accent',
-        icon: 'text-gray-800 dark:text-primary-text',
-        borderHover: 'hover:border-accent/80',
-        glow: 'rgba(139, 92, 246, 0.15)',
+        iconContainer: 'bg-purple-100 dark:bg-accent/20',
+        icon: 'text-accent dark:text-purple-400',
+        bg: 'bg-purple-100/60 dark:bg-accent/20',
+        glowStart: 'rgba(139, 92, 246, 0.3)',
+        glowEnd: 'rgba(139, 92, 246, 0.6)',
     },
     blue: {
         iconContainer: 'bg-blue-100 dark:bg-accent-blue/20',
         icon: 'text-accent-blue dark:text-blue-400',
-        borderHover: 'hover:border-accent-blue/80',
-        glow: 'rgba(59, 130, 246, 0.15)',
+        bg: 'bg-blue-100/60 dark:bg-accent-blue/20',
+        glowStart: 'rgba(59, 130, 246, 0.3)',
+        glowEnd: 'rgba(59, 130, 246, 0.6)',
     },
     green: {
         iconContainer: 'bg-emerald-100 dark:bg-accent-green/20',
         icon: 'text-accent-green dark:text-emerald-400',
-        borderHover: 'hover:border-accent-green/80',
-        glow: 'rgba(16, 185, 129, 0.15)',
+        bg: 'bg-emerald-100/60 dark:bg-accent-green/20',
+        glowStart: 'rgba(16, 185, 129, 0.3)',
+        glowEnd: 'rgba(16, 185, 129, 0.6)',
     }
 };
 
 
 const ToolCard: React.FC<ToolCardProps> = ({ icon, title, description, buttonText, onButtonClick, colorScheme = 'purple' }) => {
-    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-        const rect = e.currentTarget.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        e.currentTarget.style.setProperty('--mouse-x', `${x}px`);
-        e.currentTarget.style.setProperty('--mouse-y', `${y}px`);
-    };
-
     const styles = colorStyles[colorScheme];
 
     return (
         <div 
-            onMouseMove={handleMouseMove}
-            style={{ '--glow-color': styles.glow } as React.CSSProperties}
-            className={`glow-card relative overflow-hidden flex flex-col justify-between p-6 bg-white dark:bg-background border border-gray-200 dark:border-secondary-accent rounded-xl transition-all duration-300 transform hover:scale-[1.02] ${styles.borderHover}`}
+            style={{ 
+                '--glow-color-start': styles.glowStart,
+                '--glow-color-end': styles.glowEnd 
+            } as React.CSSProperties}
+            className={`tool-card relative overflow-hidden flex flex-col justify-between p-6 border border-gray-200 dark:border-secondary-accent rounded-xl transition-all duration-300 ${styles.bg}`}
         >
             <div>
                 <div className="flex items-center gap-4 mb-3">

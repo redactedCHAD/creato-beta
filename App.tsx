@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import Sidebar from './components/Sidebar';
 import AdGeneratorTool from './pages/AdGeneratorTool';
-import SocialPostWriterTool from './pages/SocialPostWriterTool';
+import { SocialPostWriterTool } from './pages/SocialPostWriterTool';
 import Dashboard from './pages/Dashboard';
 import GbpOptimizerTool from './pages/GbpOptimizerTool';
 import ThemeToggle from './components/ThemeToggle';
