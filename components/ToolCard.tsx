@@ -7,7 +7,7 @@ interface ToolCardProps {
     description: string;
     buttonText: string;
     onButtonClick: () => void;
-    colorScheme?: 'purple' | 'blue' | 'green';
+    colorScheme?: 'purple' | 'blue' | 'green' | 'orange';
 }
 
 const colorStyles = {
@@ -31,6 +31,13 @@ const colorStyles = {
         bg: 'bg-emerald-100/60 dark:bg-accent-green/20',
         glowStart: 'rgba(16, 185, 129, 0.3)',
         glowEnd: 'rgba(16, 185, 129, 0.6)',
+    },
+    orange: {
+        iconContainer: 'bg-orange-100 dark:bg-orange-500/20',
+        icon: 'text-orange-500 dark:text-orange-400',
+        bg: 'bg-orange-100/60 dark:bg-orange-500/20',
+        glowStart: 'rgba(249, 115, 22, 0.3)',
+        glowEnd: 'rgba(249, 115, 22, 0.6)',
     }
 };
 

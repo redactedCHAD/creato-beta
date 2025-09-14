@@ -15,4 +15,4 @@ export interface CalendarEvent {
 }
 
 // FIX: Add a shared 'Tool' type to be used across components.
-export type Tool = 'ad-generator' | 'social-posts' | 'dashboard' | 'gbp-optimizer';
+export type Tool = 'ad-generator' | 'social-posts' | 'dashboard' | 'gbp-optimizer' | 'content-calendar';
