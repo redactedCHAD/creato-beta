@@ -150,7 +150,7 @@ export const SocialPostWriterTool: React.FC<SocialPostWriterToolProps> = ({ onBa
                 />
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     {/* Left Side: Inputs */}
-                    <div className="flex flex-col space-y-6 p-6 bg-blue-100/60 dark:bg-accent-blue/20 border border-gray-200 dark:border-secondary-accent rounded-xl">
+                    <div className="flex flex-col space-y-6 p-6 bg-blue-100/30 dark:bg-accent-blue/20 border border-dashed border-gray-300 dark:border-secondary-accent rounded-lg">
                         {/* Input Type */}
                         <div>
                             <h2 className="text-lg font-bold text-gray-900 dark:text-primary-text mb-3"><span className="text-accent-blue">1.</span> Provide Context</h2>
@@ -178,7 +178,7 @@ export const SocialPostWriterTool: React.FC<SocialPostWriterToolProps> = ({ onBa
                         {/* Platform */}
                         <div>
                             <h2 className="text-lg font-bold text-gray-900 dark:text-primary-text mb-3"><span className="text-accent-blue">2.</span> Choose Platform</h2>
-                            <div className="grid grid-cols-3 gap-3">
+                            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                                 {Object.values(POST_TYPES).map(type => (
                                     <OptionButton key={type} label={type} isSelected={postType === type} onClick={() => setPostType(type)} />
                                 ))}
@@ -210,11 +210,11 @@ export const SocialPostWriterTool: React.FC<SocialPostWriterToolProps> = ({ onBa
                         </div>
                     </div>
                     {/* Right Side: Output */}
-                    <div className="flex flex-col space-y-4 p-6 bg-blue-100/60 dark:bg-accent-blue/20 border border-gray-200 dark:border-secondary-accent rounded-xl">
+                    <div className="flex flex-col space-y-4 p-6 bg-blue-100/30 dark:bg-accent-blue/20 border border-dashed border-gray-300 dark:border-secondary-accent rounded-lg">
                         <div className="flex justify-between items-center">
                             <h2 className="text-xl font-bold text-gray-900 dark:text-primary-text">Generated Content</h2>
                             <div className="flex items-center gap-2">
-                                {postType === POST_TYPES.BLOG && generatedContent && !isGenerating && (
+                                {generatedContent && !isGenerating && (
                                     <Button
                                         onClick={handleGenerateHeroImage}
                                         disabled={isGeneratingHeroImage || isGenerating}

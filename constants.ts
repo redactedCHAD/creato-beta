@@ -36,6 +36,7 @@ export const VIDEO_LOADING_MESSAGES: string[] = [
 export const POST_TYPES = {
     LINKEDIN: 'LinkedIn Post',
     X: 'X (Twitter) Post',
+    FACEBOOK: 'Facebook Post',
     BLOG: 'Blog Post'
 };
 

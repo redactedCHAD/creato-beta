@@ -18,7 +18,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
             onClick={onClose}
         >
             <div 
-                className="bg-white dark:bg-background border border-gray-200 dark:border-secondary-accent rounded-xl w-full max-w-md m-4"
+                className="bg-white dark:bg-background border-2 border-gray-900/80 dark:border-primary-accent/80 rounded-lg w-full max-w-md m-4"
                 onClick={e => e.stopPropagation()} // Prevent closing when clicking inside the modal
             >
                 <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-secondary-accent">

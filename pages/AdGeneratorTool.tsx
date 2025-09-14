@@ -163,7 +163,7 @@ const AdGeneratorTool: React.FC<AdGeneratorToolProps> = ({ onBackToDashboard }) 
           {/* Top Row */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Inputs Card */}
-            <div className="flex flex-col space-y-6 p-6 bg-purple-100/60 dark:bg-accent/20 border border-gray-200 dark:border-secondary-accent rounded-xl">
+            <div className="flex flex-col space-y-6 p-6 bg-purple-100/30 dark:bg-accent/20 border border-dashed border-gray-300 dark:border-secondary-accent rounded-lg">
               <div>
                 <h2 className="text-xl font-bold text-gray-900 dark:text-primary-text mb-3"><span className="text-accent">1.</span> Upload Photos</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -195,7 +195,7 @@ const AdGeneratorTool: React.FC<AdGeneratorToolProps> = ({ onBackToDashboard }) 
               </div>
             </div>
             {/* Image Generation Card */}
-            <div className="flex flex-col space-y-4 p-6 bg-purple-100/60 dark:bg-accent/20 border border-gray-200 dark:border-secondary-accent rounded-xl">
+            <div className="flex flex-col space-y-4 p-6 bg-purple-100/30 dark:bg-accent/20 border border-dashed border-gray-300 dark:border-secondary-accent rounded-lg">
               <div>
                 <h2 className="text-xl font-bold text-gray-900 dark:text-primary-text mb-3"><span className="text-accent">3.</span> Generate Ad Image</h2>
                 <p className="text-sm text-gray-600 dark:text-secondary-text mb-4">Choose up to 3 styles to apply to your ad image.</p>

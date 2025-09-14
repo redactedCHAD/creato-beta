@@ -67,6 +67,37 @@
     .tool-card:hover {
         animation: borderGlow 2.5s infinite ease-in-out;
     }
+    /* Animated Platform Icons */
+    .animated-icon {
+        transition: transform 0.3s ease-in-out;
+    }
+    .tool-card:hover .animated-icon.linkedin-icon {
+        transform: scale(1.15) rotate(-5deg);
+    }
+    .tool-card:hover .animated-icon.x-icon {
+        transform: scale(1.15) rotate(5deg);
+    }
+    .tool-card:hover .animated-icon.gbp-icon {
+        transform: scale(1.15);
+    }
+    .tool-card:hover .animated-icon.instagram-icon {
+        transform: scale(1.15) rotate(-5deg);
+    }
+    .tool-card:hover .animated-icon.facebook-icon {
+        transform: scale(1.15) translateY(-2px);
+    }
+    .instagram-gradient stop {
+        transition: stop-color 0.3s ease-in-out;
+    }
+    .tool-card:hover .instagram-gradient-stop-1 {
+        stop-color: #f09433;
+    }
+    .tool-card:hover .instagram-gradient-stop-2 {
+        stop-color: #cc2366;
+    }
+    .tool-card:hover .instagram-gradient-stop-3 {
+        stop-color: #bc1888;
+    }
   </style>
   <script type="importmap">
 {

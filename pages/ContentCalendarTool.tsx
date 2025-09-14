@@ -71,7 +71,7 @@ const ContentCalendarTool: React.FC<ContentCalendarToolProps> = ({ onBackToDashb
                     subtitle="Plan and visualize your social media and blog content."
                 />
 
-                <div className="p-6 bg-white dark:bg-background border border-gray-200 dark:border-secondary-accent rounded-xl">
+                <div className="p-6 bg-white dark:bg-background border border-dashed border-gray-300 dark:border-secondary-accent rounded-lg">
                     <CalendarHeader currentDate={currentDate} onPrevMonth={handlePrevMonth} onNextMonth={handleNextMonth} onToday={handleToday} />
                     <div className="grid grid-cols-7 gap-px bg-gray-300 dark:bg-secondary-accent border border-gray-300 dark:border-secondary-accent rounded-lg overflow-hidden">
                         {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(day => (
