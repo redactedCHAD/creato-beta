@@ -12,16 +12,17 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
 
     return (
         <div 
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60" 
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 animate-fade-in" 
+            style={{ animationDuration: '0.3s' }}
             aria-modal="true"
             role="dialog"
             onClick={onClose}
         >
             <div 
-                className="bg-white dark:bg-background border-2 border-gray-900/80 dark:border-primary-accent/80 rounded-lg w-full max-w-md m-4"
+                className="bg-white dark:bg-background border-2 border-gray-900/80 dark:border-primary-accent/80 rounded-lg w-full max-w-3xl m-4 flex flex-col max-h-[90vh]"
                 onClick={e => e.stopPropagation()} // Prevent closing when clicking inside the modal
             >
-                <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-secondary-accent">
+                <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-secondary-accent flex-shrink-0">
                     <h2 className="text-xl font-bold text-gray-900 dark:text-primary-text">{title}</h2>
                     <button 
                         onClick={onClose}
@@ -33,7 +34,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
                         </svg>
                     </button>
                 </div>
-                <div className="p-6">
+                <div className="p-6 overflow-y-auto">
                     {children}
                 </div>
             </div>

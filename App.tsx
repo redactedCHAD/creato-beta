@@ -5,6 +5,7 @@ import { SocialPostWriterTool } from './pages/SocialPostWriterTool';
 import Dashboard from './pages/Dashboard';
 import GbpOptimizerTool from './pages/GbpOptimizerTool';
 import ContentCalendarTool from './pages/ContentCalendarTool';
+import ClientServicesPage from './pages/ClientServicesPage';
 import ThemeToggle from './components/ThemeToggle';
 import type { Tool } from './types';
 
@@ -29,6 +30,8 @@ const App: React.FC = () => {
         return <GbpOptimizerTool onBackToDashboard={backToDashboard} />;
       case 'content-calendar':
         return <ContentCalendarTool onBackToDashboard={backToDashboard} />;
+      case 'client-services':
+        return <ClientServicesPage onBackToDashboard={backToDashboard} />;
       default:
         return <Dashboard onNavClick={handleNavClick} />;
     }

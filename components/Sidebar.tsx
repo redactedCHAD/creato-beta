@@ -64,6 +64,12 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTool, onNavClick }) => {
           onClick={() => onNavClick('dashboard')}
         />
         <NavLink
+          icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V8a2 2 0 00-2-2h-5L9 4H4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1z" clipRule="evenodd" /></svg>}
+          label="Client Services"
+          isActive={activeTool === 'client-services'}
+          onClick={() => onNavClick('client-services')}
+        />
+        <NavLink
           icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" /></svg>}
           label="Ad Generation"
           isActive={activeTool === 'ad-generator'}

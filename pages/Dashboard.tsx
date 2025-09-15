@@ -6,6 +6,7 @@ import type { Tool } from '../types';
 // Non-animated icons
 const CalendarIcon = () => <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0h18M-4.5 12h28.5" /></svg>;
 const BlogIcon = () => <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" /></svg>;
+const ServicesIcon = () => <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.627 48.627 0 0 1 12 20.904a48.627 48.627 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.57 50.57 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M12 20.904v-5.413m0 0a50.57 50.57 0 0 1-2.658-.813m2.658.813A50.57 50.57 0 0 0 12 13.489c-1.532 0-3.022.203-4.444.6V17.5a2.25 2.25 0 0 0 2.25 2.25h5.332c.33.041.65.09.966.148m-2.932-5.413a50.649 50.649 0 0 0 2.658-.813" /></svg>
 
 // Animated Platform Icons
 const AnimatedInstagramIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
@@ -159,6 +160,21 @@ const Dashboard: React.FC<DashboardProps> = ({ onNavClick }) => {
                         className={tool.className}
                     />
                 ))}
+            </div>
+
+            <div className="mt-12 pt-8 border-t border-gray-200 dark:border-secondary-accent">
+                 <Header
+                    title="Client Services"
+                    subtitle="Explore our comprehensive digital marketing solutions for local businesses."
+                />
+                <ToolCard
+                    icon={<ServicesIcon />}
+                    title="View All Services & Packages"
+                    description="Browse our full suite of digital marketing services, from SEO and social media to comprehensive growth packages."
+                    onClick={() => onNavClick('client-services')}
+                    colorScheme="purple"
+                    className="md:col-span-2 lg:col-span-3"
+                />
             </div>
         </div>
     );
