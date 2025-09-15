@@ -1,5 +1,5 @@
 {
-  "name": "AI Ad Gen - WhiteDesign",
-  "description": "An application that uses Gemini to transform a product photo into a styled advertisement image based on user-selected attributes like 'UGC', 'Studio Quality', or 'Vibrant'.",
+  "name": "Content Koala🐨",
+  "description": "A digital marketing assistant powered by Gemini.",
   "requestFramePermissions": []
 }

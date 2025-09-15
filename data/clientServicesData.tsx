@@ -161,12 +161,13 @@ export const PRICING_PACKAGES: PricingPackage[] = [
             'Basic website SEO audit and fixes',
             '5 high-priority local citations',
             'Monthly Google Posts (4 posts)',
+            'Monthly social media (Facebook, Instagram, Linkedin) content creation (12 social posts)',
             'Review management and responses'
         ],
         investment: {
-            setup: '$1,200',
-            monthly: '$450',
-            total: '$1,650'
+            setup: '$695',
+            monthly: '$195',
+            total: '$890'
         },
         bestFor: 'Service businesses, retail stores, restaurants getting started online'
     },
@@ -180,17 +181,17 @@ export const PRICING_PACKAGES: PricingPackage[] = [
         subtitle: 'Most Popular - Everything you need to dominate your local market',
         whatsIncluded: [
             'Complete Google Business Profile optimization',
-            'Full website SEO overhaul (up to 10 pages)',
-            '25+ strategic local citations',
-            'Social media setup (Facebook + Instagram)',
-            'Monthly content creation (8 Google Posts, 12 social posts)',
+            'Full website SEO overhaul',
+            '10+ strategic local citations',
+            'Social media setup (Facebook, Instagram, Linkedin)',
+            'Monthly content creation (8 Google Posts, 24 social posts)',
             'Blog article creation (2 per month)',
             'Monthly performance reports'
         ],
         investment: {
-            setup: '$2,500',
-            monthly: '$850',
-            total: '$3,350'
+            setup: '$1,495',
+            monthly: '$395',
+            total: '$1,890'
         },
         bestFor: 'Established businesses ready for serious growth'
     },
@@ -205,7 +206,7 @@ export const PRICING_PACKAGES: PricingPackage[] = [
         whatsIncluded: [
             'Everything in Professional Package PLUS:',
             'Advanced website development (unlimited pages)',
-            '50+ premium local citations',
+            '20+ premium local citations',
             'Full social media management with advertising',
             'Weekly blog content and SEO articles',
             'Competitor monitoring and analysis',
@@ -213,9 +214,9 @@ export const PRICING_PACKAGES: PricingPackage[] = [
             'Custom landing pages for special campaigns'
         ],
         investment: {
-            setup: '$4,000',
-            monthly: '$1,500',
-            total: '$5,500'
+            setup: '$2,950',
+            monthly: '$995',
+            total: '$3,945'
         },
         bestFor: 'Multi-location businesses, established companies, competitive markets'
     }

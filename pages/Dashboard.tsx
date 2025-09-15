@@ -144,7 +144,7 @@ const Dashboard: React.FC<DashboardProps> = ({ onNavClick }) => {
     return (
         <div className="w-full max-w-7xl mx-auto space-y-8 animate-fade-in">
             <Header
-                title="Apps"
+                title="Content Koala🐨"
                 subtitle="Use an App, or create your own, to achieve your marketing goals."
             />
             

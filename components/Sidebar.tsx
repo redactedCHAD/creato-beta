@@ -53,8 +53,8 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTool, onNavClick }) => {
   return (
     <aside className="w-64 bg-white dark:bg-background border-r border-gray-200 dark:border-secondary-accent flex-shrink-0 flex-col hidden sm:flex">
       <div className="px-6 py-4 border-b border-gray-200 dark:border-secondary-accent flex items-center justify-center gap-2">
-        <img src={logoDataUri} alt="ContentCore Logo" className="h-8 w-8"/>
-        <span className="font-bold text-xl text-gray-800 dark:text-primary-text font-serif tracking-tight">ContentCore</span>
+        <img src={logoDataUri} alt="Content Koala Logo" className="h-8 w-8"/>
+        <span className="font-bold text-xl text-gray-800 dark:text-primary-text font-serif tracking-tight">Content Koala🐨</span>
       </div>
       <nav className="flex-1 px-4 py-4 space-y-2">
         <NavLink
