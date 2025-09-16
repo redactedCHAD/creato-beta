@@ -53,6 +53,9 @@
       }
     </script>
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     @keyframes borderGlow {
       0% {
         box-shadow: 0 0 4px var(--glow-color-start);
@@ -97,6 +100,17 @@
     }
     .tool-card:hover .instagram-gradient-stop-3 {
         stop-color: #bc1888;
+    }
+    @keyframes iconGlow {
+      0%, 100% {
+        box-shadow: 0 0 6px rgba(139, 92, 246, 0.5);
+      }
+      50% {
+        box-shadow: 0 0 18px rgba(139, 92, 246, 0.8);
+      }
+    }
+    .glowing-icon {
+      animation: iconGlow 4s infinite ease-in-out;
     }
   </style>
   <script type="importmap">

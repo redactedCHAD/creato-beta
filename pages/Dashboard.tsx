@@ -161,21 +161,6 @@ const Dashboard: React.FC<DashboardProps> = ({ onNavClick }) => {
                     />
                 ))}
             </div>
-
-            <div className="mt-12 pt-8 border-t border-gray-200 dark:border-secondary-accent">
-                 <Header
-                    title="Client Services"
-                    subtitle="Explore our comprehensive digital marketing solutions for local businesses."
-                />
-                <ToolCard
-                    icon={<ServicesIcon />}
-                    title="View All Services & Packages"
-                    description="Browse our full suite of digital marketing services, from SEO and social media to comprehensive growth packages."
-                    onClick={() => onNavClick('client-services')}
-                    colorScheme="purple"
-                    className="md:col-span-2 lg:col-span-3"
-                />
-            </div>
         </div>
     );
 };
